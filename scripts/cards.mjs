@@ -53,7 +53,7 @@ export function renderInfoCard(info) {
 
   // fila clasica de bloques de color de neofetch
   y += 6;
-  const colors = [P.bg, P.red, P.accent, P.yellow, P.blue, P.purple, P.text, P.accentDim];
+  const colors = ['#8b949e', P.red, P.accent, P.yellow, P.blue, P.purple, P.text, P.accentDim];
   const blocks = colors
     .map((c, n) => `<rect x="${PAD + n * 34}" y="${y}" width="34" height="20" fill="${c}" stroke="${P.border}"/>`)
     .join('');

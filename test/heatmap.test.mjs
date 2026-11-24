@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { parseContributions, renderHeatmap } from '../scripts/contributions.mjs';
+import { parseContributions, validateContributions, renderHeatmap } from '../scripts/contributions.mjs';
 
 const html = readFileSync(new URL('./fixtures/contributions.html', import.meta.url), 'utf8');
 const fixtureTotal = Number(
@@ -65,4 +65,31 @@ test('render: celdas por fecha, primera semana parcial en su fila', () => {
   // 2025-01-08 es miercoles (fila 3)
   const s = renderHeatmap({ days: [{ date: '2025-01-08', level: 1, count: 1 }, { date: '2025-01-09', level: 0, count: 0 }], total: 1 });
   assert.match(s, /<rect class="c l1 d3" x="\d+" y="\d+"/);
+});
+
+function synth(n, h2) {
+  const t0 = Date.UTC(2025, 0, 1);
+  const tds = Array.from({ length: n }, (_, i) => `<td data-date="${new Date(t0 + i * 864e5).toISOString().slice(0, 10)}" id="c${i}" data-level="0"></td>`).join('');
+  return (h2 ? '<h2 id="js-contribution-activity-description">0 contributions in the last year</h2>' : '') + tds;
+}
+
+test('validate: fixture real pasa', () => {
+  assert.doesNotThrow(() => validateContributions(parseContributions(html)));
+});
+
+test('validate: HTML con data-level mangled lanza', () => {
+  assert.throws(() => validateContributions(parseContributions(html.replaceAll('data-level', 'x'))));
+});
+
+test('validate: sin h2 lanza', () => {
+  const noH2 = html.replace(/id="js-contribution-activity-description"/, 'id="otro"');
+  assert.throws(() => validateContributions(parseContributions(noH2)), /total/i);
+});
+
+test('validate: ano real con total 0 y 365 dias pasa', () => {
+  assert.doesNotThrow(() => validateContributions(parseContributions(synth(365, true))));
+});
+
+test('validate: numero de dias fuera de rango lanza', () => {
+  assert.throws(() => validateContributions(parseContributions(synth(100, true))), /dias/);
 });

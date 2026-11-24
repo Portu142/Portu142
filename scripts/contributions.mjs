@@ -33,6 +33,14 @@ export function parseContributions(html) {
   days.sort((a, b) => a.date.localeCompare(b.date));
   const h2 = html.match(/id="js-contribution-activity-description"[^>]*>\s*([\d,.]+)\s+contributions?/);
   const total = h2 ? Number(h2[1].replace(/[,.]/g, '')) : days.reduce((a, d) => a + d.count, 0);
+  return { days, total, hasTotal: Boolean(h2) };
+}
+
+// Guarda anti-sobrescritura: lanza si los datos parecen un HTML cambiado o roto.
+export function validateContributions({ days, total, hasTotal }) {
+  if (days.length < 350 || days.length > 372) throw new Error(`Numero de dias inesperado: ${days.length}`);
+  if (!hasTotal) throw new Error('No se encontro el total de contribuciones (h2)');
+  if (total > 0 && !days.some((d) => d.level > 0)) throw new Error('Total > 0 pero ningun dia con nivel > 0');
   return { days, total };
 }
 

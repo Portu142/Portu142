@@ -16,9 +16,13 @@ test('toda <img> tiene width y alt no vacío', () => {
   const imgs = readme.match(/<img\b[^>]*>/g) ?? [];
   assert.ok(imgs.length >= 5);
   for (const tag of imgs) {
-    assert.match(tag, /\swidth="\d+"/, tag);
+    assert.match(tag, /\swidth="\d+%?"/, tag);
     assert.match(tag, /\salt="[^"]+"/, tag);
   }
+});
+
+test('el README no usa <table>', () => {
+  assert.doesNotMatch(readme, /<table/i);
 });
 
 test('el README no menciona repos privados y enlaza el correo', () => {
