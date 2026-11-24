@@ -48,7 +48,7 @@ export function renderInfoCard(info) {
   return frame({ width: W, height: y, title: `${info.user} — sobre mí`, body });
 }
 
-export function renderProjectCard(p) {
+export function renderProjectCard(p, minHeight = 0) {
   const W = cardWidth(p);
   const FS = 13;
   const LH = 21;
@@ -75,5 +75,11 @@ export function renderProjectCard(p) {
   text(p.url.replace('https://', ''), `fill:${P.muted}`, 12);
   y += 8;
 
-  return frame({ width: W, height: y, title: p.name, body });
+  return frame({ width: W, height: Math.max(y, minHeight), title: p.name, body });
 }
+
+// Altura natural de una tarjeta (la del SVG sin minHeight).
+const naturalHeight = (p) => Number(/height="([0-9]+)"/.exec(renderProjectCard(p))[1]);
+
+// Altura comun para las tarjetas de 425 px que van lado a lado.
+export const pairHeight = (projects) => Math.max(...projects.filter((p) => cardWidth(p) === 425).map(naturalHeight));

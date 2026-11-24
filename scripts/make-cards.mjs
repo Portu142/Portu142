@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { info, projects } from './content.mjs';
-import { renderInfoCard, renderProjectCard } from './cards.mjs';
+import { renderInfoCard, renderProjectCard, pairHeight, cardWidth } from './cards.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = (name, svg) => {
@@ -11,4 +11,5 @@ const out = (name, svg) => {
 };
 
 out('info-card.svg', renderInfoCard(info));
-for (const p of projects) out(`project-${p.name}.svg`, renderProjectCard(p));
+const pair = pairHeight(projects);
+for (const p of projects) out(`project-${p.name}.svg`, renderProjectCard(p, cardWidth(p) === 425 ? pair : 0));

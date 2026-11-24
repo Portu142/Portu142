@@ -15,7 +15,6 @@ export const info = {
 export const projects = [
   {
     name: 'LocalizadorCafeterias',
-    emoji: '☕',
     tagline: 'Encuentra cafeterías cerca de ti, consulta su carta y opina.',
     stack: ['.NET 8', 'React 19 + TS', 'PostgreSQL/PostGIS', 'Leaflet'],
     highlight: 'Demo en vivo · CI en GitHub Actions',
@@ -23,7 +22,6 @@ export const projects = [
   },
   {
     name: 'gestor-de-almacen',
-    emoji: '📦',
     tagline: 'Inventario de tienda: stock mínimo, entradas/salidas y avisos de reposición.',
     stack: ['Node.js + Express', 'React + Vite', 'SQLite'],
     highlight: '16 tests · reglas de negocio reales',
@@ -31,7 +29,6 @@ export const projects = [
   },
   {
     name: 'ScraPrice',
-    emoji: '🛒',
     tagline: 'Rastreador y comparador de precios mediante web scraping.',
     stack: ['Python', 'Frappe', 'Redis/RQ', 'BeautifulSoup'],
     highlight: 'TFG del ciclo DAW',

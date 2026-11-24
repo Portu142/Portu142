@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { escapeXml, frame } from '../scripts/svg.mjs';
 import { info, projects } from '../scripts/content.mjs';
-import { renderInfoCard, renderProjectCard, cardWidth } from '../scripts/cards.mjs';
+import { renderInfoCard, renderProjectCard, cardWidth, pairHeight } from '../scripts/cards.mjs';
 
 const PRIVATE = ['JUNIOPINHEIRO', 'MarzoPinheiro', 'Prueba2', 'EjercicioGIT', 'CVSPINHEIRO'];
 const allSvgs = () => [renderInfoCard(info), ...projects.map((p) => renderProjectCard(p))];
@@ -78,4 +78,11 @@ test('animacion: keyframes, fill both y estado final visible', () => {
   assert.match(s, /prefers-reduced-motion: reduce[\s\S]*animation:\s*none/);
   const delays = [...s.matchAll(/animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
   assert.ok(delays.length > 0 && Math.max(...delays) + 0.5 < 2.5);
+});
+
+test('las dos tarjetas de 425 px tienen la misma altura', () => {
+  const h = pairHeight(projects);
+  const heights = projects.filter((p) => cardWidth(p) === 425).map((p) => /height="([0-9]+)"/.exec(renderProjectCard(p, h))[1]);
+  assert.equal(heights.length, 2);
+  assert.equal(heights[0], heights[1]);
 });
