@@ -59,7 +59,7 @@ test('ninguna linea de texto excede el ancho interior (0.6 x font-size por carac
     ...projects.map((p) => [renderProjectCard(p), cardWidth(p)]),
   ];
   for (const [svg, width] of cards) {
-    const re = /<text\b[^>]*?font-size="([\d.]+)"[^>]*>([\s\S]*?)</text>/g;
+    const re = /<text\b[^>]*?font-size="([\d.]+)"[^>]*>([\s\S]*?)<\/text>/g;
     let m, n = 0;
     while ((m = re.exec(svg))) {
       n++;
