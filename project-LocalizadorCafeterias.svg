@@ -16,7 +16,7 @@ text{font-family:ui-monospace, SFMono-Regular, Consolas, monospace;fill:#c9d1d9}
 <g class="ln" style="animation-delay:0.00s"><text x="24" y="74" font-size="17" style="fill:#39d353;font-weight:bold">▸ LocalizadorCafeterias</text></g>
 <g class="ln" style="animation-delay:0.12s"><text x="24" y="101" font-size="13">Encuentra cafeterías cerca de ti, consulta su</text></g>
 <g class="ln" style="animation-delay:0.24s"><text x="24" y="122" font-size="13">carta y opina.</text></g>
-<g class="ln" style="animation-delay:0.36s"><text x="24" y="149" font-size="13" style="fill:#58a6ff">.NET 8 · React 19 + TS · PostgreSQL/PostGIS ·</text></g>
+<g class="ln" style="animation-delay:0.36s"><text x="24" y="149" font-size="13" style="fill:#58a6ff">.NET 8 · React 19 + TS · PostgreSQL/PostGIS</text></g>
 <g class="ln" style="animation-delay:0.48s"><text x="24" y="170" font-size="13" style="fill:#58a6ff">Leaflet</text></g>
 <g class="ln" style="animation-delay:0.60s"><text x="24" y="197" font-size="13" style="fill:#d29922">★ Demo en vivo · CI en GitHub Actions</text></g>
 <g class="ln" style="animation-delay:0.72s"><text x="24" y="222" font-size="12" style="fill:#8b949e">github.com/Portu142/LocalizadorCafeterias</text></g>

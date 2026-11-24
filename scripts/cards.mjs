@@ -1,5 +1,20 @@
 import { PALETTE as P, TOP, PAD, CHAR_W, escapeXml, frame, wrap, delay } from './svg.mjs';
 
+// Agrupa items enteros en lineas de hasta max caracteres, sin separador al inicio ni al final.
+export function wrapItems(items, sep, max) {
+  const lines = [];
+  let cur = '';
+  for (const it of items) {
+    const next = cur ? cur + sep + it : it;
+    if (cur && [...next].length > max) {
+      lines.push(cur);
+      cur = it;
+    } else cur = next;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
 export const cardWidth = (project) => (project.name === 'ScraPrice' ? 860 : 425);
 
 const maxChars = (width, fontSize) => Math.floor((width - 2 * PAD) / (CHAR_W * fontSize));
@@ -68,7 +83,7 @@ export function renderProjectCard(p, minHeight = 0) {
   y += 6;
   for (const l of wrap(p.tagline, mc)) text(l);
   y += 6;
-  for (const l of wrap(p.stack.join(' · '), mc - 2)) text(l, `fill:${P.blue}`);
+  for (const l of wrapItems(p.stack, ' · ', mc - 2)) text(l, `fill:${P.blue}`);
   y += 6;
   for (const l of wrap(p.highlight, mc - 2)) text(`★ ${l}`, `fill:${P.yellow}`);
   y += 4;

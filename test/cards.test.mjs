@@ -59,7 +59,7 @@ test('ninguna linea de texto excede el ancho interior (0.6 x font-size por carac
     ...projects.map((p) => [renderProjectCard(p), cardWidth(p)]),
   ];
   for (const [svg, width] of cards) {
-    const re = /<text\b[^>]*?font-size="([\d.]+)"[^>]*>([\s\S]*?)<\/text>/g;
+    const re = /<text\b[^>]*?font-size="([\d.]+)"[^>]*>([\s\S]*?)</text>/g;
     let m, n = 0;
     while ((m = re.exec(svg))) {
       n++;
@@ -85,4 +85,14 @@ test('las dos tarjetas de 425 px tienen la misma altura', () => {
   const heights = projects.filter((p) => cardWidth(p) === 425).map((p) => /height="([0-9]+)"/.exec(renderProjectCard(p, h))[1]);
   assert.equal(heights.length, 2);
   assert.equal(heights[0], heights[1]);
+});
+
+test('las lineas de stack no empiezan ni terminan con el separador', () => {
+  for (const p of projects) {
+    const svg = renderProjectCard(p);
+    const lines = [...svg.matchAll(/<text[^>]*fill:#58a6ff[^>]*>([^<]*)<\/text>/g)].map((m) => decode(m[1]));
+    assert.ok(lines.length >= 1);
+    assert.equal(lines.join(' · ').split(' · ').length, p.stack.length);
+    for (const l of lines) assert.ok(!l.endsWith('·') && !l.startsWith('·'), l);
+  }
 });
