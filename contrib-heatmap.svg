@@ -398,8 +398,8 @@ text{font-family:ui-monospace, SFMono-Regular, Consolas, monospace;fill:#c9d1d9}
 <rect class="c l1 d57" x="768" y="162" width="11" height="11" rx="2"/>
 <rect class="c l2 d52" x="782" y="78" width="11" height="11" rx="2"/>
 <rect class="c l4 d53" x="782" y="92" width="11" height="11" rx="2"/>
-<rect class="c l0 d54" x="782" y="106" width="11" height="11" rx="2"/>
-<text x="54" y="200" font-size="12" style="fill:#39d353">47 contribuciones en el último año</text>
+<rect class="c l3 d54" x="782" y="106" width="11" height="11" rx="2"/>
+<text x="54" y="200" font-size="12" style="fill:#39d353">56 contribuciones en el último año</text>
 <text x="656" y="200" font-size="10" text-anchor="end" style="fill:#8b949e">Menos</text>
 <rect class="l0" x="664" y="190" width="11" height="11" rx="2"/>
 <rect class="l1" x="678" y="190" width="11" height="11" rx="2"/>
