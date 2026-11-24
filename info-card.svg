@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" role="img" aria-label="ricardo@github — sobre mí">
+<title>ricardo@github — sobre mí</title>
+<style>
+text{font-family:ui-monospace, SFMono-Regular, Consolas, monospace;fill:#c9d1d9}
+.ln{animation-name:ln-in;animation-duration:.45s;animation-timing-function:ease-out;animation-fill-mode:both;animation-iteration-count:1}
+@keyframes ln-in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+@media (prefers-reduced-motion: reduce){.ln{animation:none;opacity:1;transform:none}}
+
+</style>
+<rect x="0.5" y="0.5" width="859" height="359" rx="10" fill="#0d1117" stroke="#30363d"/>
+<path d="M0.5 40 H859.5" stroke="#30363d"/>
+<circle cx="22" cy="20" r="6" fill="#f85149"/>
+<circle cx="42" cy="20" r="6" fill="#d29922"/>
+<circle cx="62" cy="20" r="6" fill="#39d353"/>
+<text x="430" y="25" font-size="12" text-anchor="middle" style="fill:#8b949e">ricardo@github — sobre mí</text>
+<g class="ln" style="animation-delay:0.00s"><text x="24" y="78" font-size="15"><tspan style="fill:#39d353;font-weight:bold">ricardo@github</tspan></text></g>
+<g class="ln" style="animation-delay:0.12s"><text x="24" y="98" font-size="15" style="fill:#30363d">--------------</text></g>
+<g class="ln" style="animation-delay:0.24s"><text x="24" y="124" font-size="18" font-weight="bold">Ricardo Pinheiro</text></g>
+<g class="ln" style="animation-delay:0.36s"><text x="24" y="154" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Rol</tspan><tspan x="123">Desarrollador full-stack junior</tspan></text></g>
+<g class="ln" style="animation-delay:0.48s"><text x="24" y="180" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Formación</tspan><tspan x="123">Técnico Superior en DAW</tspan></text></g>
+<g class="ln" style="animation-delay:0.60s"><text x="24" y="206" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Stack</tspan><tspan x="123">C# / .NET 8 · React + TypeScript · Node.js / Express · Python</tspan></text></g>
+<g class="ln" style="animation-delay:0.72s"><text x="24" y="232" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Datos</tspan><tspan x="123">PostgreSQL / PostGIS · SQLite</tspan></text></g>
+<g class="ln" style="animation-delay:0.84s"><text x="24" y="258" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Ahora</tspan><tspan x="123">buscando puesto como desarrollador · profundizando en React</tspan></text></g>
+<g class="ln" style="animation-delay:0.96s"><text x="24" y="284" font-size="15"><tspan style="fill:#39d353;font-weight:bold">Contacto</tspan><tspan x="123">rdpcarvalho644@gmail.com</tspan></text></g>
+<g class="ln" style="animation-delay:1.08s"><rect x="24" y="316" width="34" height="20" fill="#0d1117" stroke="#30363d"/><rect x="58" y="316" width="34" height="20" fill="#f85149" stroke="#30363d"/><rect x="92" y="316" width="34" height="20" fill="#39d353" stroke="#30363d"/><rect x="126" y="316" width="34" height="20" fill="#d29922" stroke="#30363d"/><rect x="160" y="316" width="34" height="20" fill="#58a6ff" stroke="#30363d"/><rect x="194" y="316" width="34" height="20" fill="#bc8cff" stroke="#30363d"/><rect x="228" y="316" width="34" height="20" fill="#c9d1d9" stroke="#30363d"/><rect x="262" y="316" width="34" height="20" fill="#26a641" stroke="#30363d"/></g>
+
+</svg>

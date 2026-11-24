@@ -1,0 +1,10 @@
+{
+  "name": "portu142-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "cards": "node scripts/make-cards.mjs"
+  }
+}

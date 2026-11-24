@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="251" viewBox="0 0 425 251" role="img" aria-label="LocalizadorCafeterias">
+<title>LocalizadorCafeterias</title>
+<style>
+text{font-family:ui-monospace, SFMono-Regular, Consolas, monospace;fill:#c9d1d9}
+.ln{animation-name:ln-in;animation-duration:.45s;animation-timing-function:ease-out;animation-fill-mode:both;animation-iteration-count:1}
+@keyframes ln-in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+@media (prefers-reduced-motion: reduce){.ln{animation:none;opacity:1;transform:none}}
+
+</style>
+<rect x="0.5" y="0.5" width="424" height="250" rx="10" fill="#0d1117" stroke="#30363d"/>
+<path d="M0.5 40 H424.5" stroke="#30363d"/>
+<circle cx="22" cy="20" r="6" fill="#f85149"/>
+<circle cx="42" cy="20" r="6" fill="#d29922"/>
+<circle cx="62" cy="20" r="6" fill="#39d353"/>
+<text x="212.5" y="25" font-size="12" text-anchor="middle" style="fill:#8b949e">LocalizadorCafeterias</text>
+<g class="ln" style="animation-delay:0.00s"><text x="24" y="74" font-size="17" style="fill:#39d353;font-weight:bold">▸ LocalizadorCafeterias</text></g>
+<g class="ln" style="animation-delay:0.12s"><text x="24" y="101" font-size="13">Encuentra cafeterías cerca de ti, consulta su</text></g>
+<g class="ln" style="animation-delay:0.24s"><text x="24" y="122" font-size="13">carta y opina.</text></g>
+<g class="ln" style="animation-delay:0.36s"><text x="24" y="149" font-size="13" style="fill:#58a6ff">.NET 8 · React 19 + TS · PostgreSQL/PostGIS ·</text></g>
+<g class="ln" style="animation-delay:0.48s"><text x="24" y="170" font-size="13" style="fill:#58a6ff">Leaflet</text></g>
+<g class="ln" style="animation-delay:0.60s"><text x="24" y="197" font-size="13" style="fill:#d29922">★ Demo en vivo · CI en GitHub Actions</text></g>
+<g class="ln" style="animation-delay:0.72s"><text x="24" y="222" font-size="12" style="fill:#8b949e">github.com/Portu142/LocalizadorCafeterias</text></g>
+
+</svg>
