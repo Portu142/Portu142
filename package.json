@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "cards": "node scripts/make-cards.mjs"
+    "cards": "node scripts/make-cards.mjs",
+    "heatmap": "node scripts/make-heatmap.mjs"
   }
 }
